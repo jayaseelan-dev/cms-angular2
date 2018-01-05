@@ -1,0 +1,18 @@
+<header class="container">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+   <nav>
+    <a routerLink="/" routerLinkActive="active">Home</a>
+    <a routerLink="/myposts" routerLinkActive="active">Posts</a>
+    <a routerLink="/login" routerLinkActive="active">Logout</a>
+  </nav> 
+</header>
+<section>
+   <router-outlet></router-outlet>
+</section>
+<footer class="footer-container">
+  <div class="container">
+    Sample MEAN application - &copy; 2016 - 2017
+  </div>
+</footer>

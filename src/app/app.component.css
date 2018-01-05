@@ -1,0 +1,13 @@
+.container {
+    margin: 0 auto;
+    max-width: 1027px;
+    text-align: center;
+}
+
+.footer-container {
+    height: 30px; 
+    position: fixed; 
+    bottom:0; 
+    width: 100%; 
+    background-color: lightgrey;
+}
