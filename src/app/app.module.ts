@@ -6,19 +6,19 @@ import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './login/login.module';
-import { PostsModule } from './posts/posts.module';
+import { CompanyModule } from './home/company/company.module';
 
 @NgModule({
-    imports: [
-      BrowserModule,
-      HttpModule,
-      LoginModule,
-      PostsModule,
-      AppRoutingModule // Order matters, the wildcard route must be registered at the last.
-    ],
-    declarations: [AppComponent],
-    providers: [],
-    bootstrap: [AppComponent]
+	imports: [
+		BrowserModule,
+		HttpModule,
+		LoginModule,
+		CompanyModule,
+		AppRoutingModule // Order matters, the wildcard route must be registered at the last.
+	],
+	declarations: [AppComponent],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 
 export class AppModule { }

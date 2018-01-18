@@ -28,7 +28,7 @@ export class LoginComponent {
                     }
                 });
                 if (!this.isInvalidCredentials) {
-                    this.router.navigateByUrl('/myposts');
+                    this.router.navigateByUrl('/company');
                 }
             });
     }

@@ -17,6 +17,6 @@ import { PostsService } from './posts.service';
     ],
     providers: [
         PostsService
-    ],
+    ]
 })
 export class PostsModule { }
