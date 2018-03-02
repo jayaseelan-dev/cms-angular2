@@ -1,22 +1,24 @@
 <section class="container">
     <div>
-        <form>
+        <form #loginForm="ngForm" (ngSubmit)="onLogin(user)" class="form-horizontal">
             <div class="form-group">
-                <label class="control-label col-sm-2" for="uname">Username:</label>
-                <input id="uname" class="form-control col-sm-10" type="text" [(ngModel)]="user.name" name="uname"/>
+                <label class="control-label" for="uname">Username:</label>
+                <input id="uname" class="form-control" 
+                        type="text" [(ngModel)]="user.name" name="uname"
+                        required />
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd">Password:</label>
-                <input id="pwd" class="form-control col-sm-10" type="password" [(ngModel)]="user.password" name="password"/>
+                <label class="control-label" for="pwd">Password:</label>
+                <input id="pwd" class="form-control" type="password" 
+                        [(ngModel)]="user.password" name="password"
+                        required />
             </div>
             <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-default" (click)="onLogin()">Login</button>
-                </div>
+                <button class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
             </div>
         </form>
     </div>
-    <div *ngIf="isInvalidCredentials">
+    <div *ngIf="isInvalidCredentials" [style.color]="'red'">
         Login Failed
     </div>
 </section>

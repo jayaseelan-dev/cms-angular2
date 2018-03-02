@@ -1,7 +1,15 @@
-<header class="container">
-  <h1>
-    {{title}}
-  </h1>
+<header>
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="header-logo"></div>
+      <h2>
+        {{title}}
+      </h2>
+      <div>
+          {{user.name}}
+      </div>
+    </div>
+  </div>
 </header>
 <section>
    <router-outlet></router-outlet>

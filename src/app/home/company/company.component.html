@@ -1,9 +1,18 @@
 <div class="container">
-    <div class="row" *ngFor="let company of companies">
-        <div class="card card-block">
-            <span class="card-text">{{company.id }}</span>
-            <span class="card-text">{{company.name}}</span>
-        </div>
-    </div>
+    <table class="table">
+        <caption>List of companies</caption>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let company of companies">
+                <th scope="row">{{company.id }}</th>
+                <td>{{company.name}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
   

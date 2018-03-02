@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+
 import { CompanyService } from "./company.service";
 
 @Component({
@@ -7,7 +8,8 @@ import { CompanyService } from "./company.service";
 })
 
 export class CompanyComponent {
-    companies = [];
+
+    private companies: Array<any> = [];
 
     constructor(private companyService: CompanyService) { }
 
