@@ -1,21 +1,9 @@
-<header>
-  <div class="container">
-    <div class="d-flex align-items-center justify-content-between">
-      <div class="header-logo"></div>
-      <h2>
-        {{title}}
-      </h2>
-      <div>
-          {{user.name}}
-      </div>
-    </div>
-  </div>
-</header>
+<app-header></app-header>
 <section>
-   <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </section>
 <footer class="footer-container">
-  <div class="container">
-    {{title}} &copy; 2018
+  <div>
+    CMS &copy; 2018
   </div>
 </footer>

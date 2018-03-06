@@ -1,0 +1,29 @@
+<header>
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="header-logo"></div>
+            <h2>
+                Corporate Management System
+            </h2>
+            <div>
+                <span *ngIf="user?.username">
+                    Welcome, {{user?.username}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-light">
+        <ul class="navbar-nav" *ngIf="user?.username">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="">Company</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="">Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="" (click)="onLogout()">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+  

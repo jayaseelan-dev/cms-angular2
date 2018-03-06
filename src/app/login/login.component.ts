@@ -2,22 +2,24 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { LoginService } from './login.service';
-import { CommonService } from '../common.service';
+import { CommonService } from '../common/common.service';
 
 @Component({
     selector: 'app-login',
-    templateUrl: './login.component.html',
-    providers: [LoginService, CommonService]
+    templateUrl: './login.component.html'
 })
 
 export class LoginComponent {
     user = {
         name: 'admin',
-        password: ''
+        password: 'admin'
     };
     isInvalidCredentials: boolean = false;
 
-    constructor(private router: Router, private loginService: LoginService, private commonService: CommonService) { }
+    constructor(private router: Router, 
+                private loginService: LoginService, 
+                private commonService: CommonService) {
+    }
 
     onLogin(user) {
         this.loginService.doAuthenticateUser(this.user)
@@ -26,12 +28,12 @@ export class LoginComponent {
                 users.json().map((user) => {
                     if (user.username === this.user.name && user.password === this.user.password) {
                         this.isInvalidCredentials = false;
-                        // let commonService = new CommonService();
                         this.commonService.user = user;
+                        this.commonService.updateUser(user);
                     }
                 });
                 if (!this.isInvalidCredentials) {
-                    this.router.navigateByUrl('/company');
+                    this.router.navigateByUrl('/home');
                 }
             });
     }
