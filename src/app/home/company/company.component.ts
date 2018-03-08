@@ -9,7 +9,7 @@ import { CompanyService } from "./company.service";
 
 export class CompanyComponent {
 
-    private companies: Array<any> = [];
+    public companies: Array<any> = [];
 
     constructor(private companyService: CompanyService) { }
 

@@ -1,16 +1,17 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Router } from '@angular/router';
 
-import { CommonService } from './common.service';
+import { CommonService } from '../common/common.service';
 import { Subscription } from "rxjs/Subscription";
 
 @Component({
     selector: 'app-header',
-    templateUrl: './header.component.html'
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css']
 })
 
 export class AppHeader implements OnInit, OnDestroy { 
-    private user: object;
+    public user;
     public subscription: Subscription;
 
     constructor(private router: Router, private commonService: CommonService) {

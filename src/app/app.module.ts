@@ -3,15 +3,15 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AppHeader } from './common/header.component';
+import { AppHeader } from './header/header.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './login/login.module';
-// import { CompanyModule } from './home/company/company.module';
 import { HomeModule } from './home/home.module';
 
-import { LoginService } from './login/login.service';
 import { CommonService } from './common/common.service';
+
+import { AuthGuard } from './common/auth-guard.service';
 
 @NgModule({
 	imports: [
@@ -22,7 +22,7 @@ import { CommonService } from './common/common.service';
 		AppRoutingModule // Order matters, the wildcard route must be registered at the last.
 	],
 	declarations: [AppComponent, AppHeader],
-	providers: [LoginService, CommonService],
+	providers: [CommonService, AuthGuard], // Including the service in providers, will create new instance.
 	bootstrap: [AppComponent]
 })
 

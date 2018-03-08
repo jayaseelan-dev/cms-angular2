@@ -6,7 +6,8 @@ import { CommonService } from '../common/common.service';
 
 @Component({
     selector: 'app-login',
-    templateUrl: './login.component.html'
+    templateUrl: './login.component.html',
+    providers: [LoginService]
 })
 
 export class LoginComponent {

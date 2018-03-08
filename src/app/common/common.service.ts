@@ -1,7 +1,7 @@
 import { Subject } from 'rxjs/Subject';
 
 export class CommonService {
-    private _user: object;
+    private _user = null;
     private _userSource = new Subject<object>();
     public userUpdated$ = this._userSource.asObservable();
 
@@ -10,9 +10,10 @@ export class CommonService {
     }
     
     set user(user: object) {
+        this._user = user;
         localStorage.setItem('currentUser', JSON.stringify(user));
     }
-
+    
     updateUser(user: object) {
         this._userSource.next(user);
     }
@@ -20,5 +21,13 @@ export class CommonService {
     removeUser() {
         localStorage.removeItem('currentUser');
         this._userSource.next({});
+    }
+
+    isAuthenticated() {
+        if (this.user === null) {
+            this.removeUser();
+            return false;
+        }
+        return true;
     }
 }
