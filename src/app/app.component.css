@@ -1,7 +1,12 @@
+.content-wrapper {
+    margin-top: 20px;
+}
+
 .footer-container {
+    text-align: center;
     height: 30px; 
     position: fixed; 
     bottom: 0; 
     width: 100%; 
-    background-color: lightgrey;
+    background-color: #d3d3d3;
 }

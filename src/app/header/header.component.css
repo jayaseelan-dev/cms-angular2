@@ -1,7 +1,86 @@
+.header-wrapper {
+    color: white;
+    background-color: #7e3d3c;
+    box-shadow: 0px 0px 10px 3px #7e3d3c;
+    font-family: 'Courier New';
+}
 .header-logo {
+    background-color: #d3d3d3;
+    box-shadow: 0px 0px 10px 5px #d3d3d3;
     background-image: url('/assets/images/cms-large.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
     width: 158px;
+    height: 50px;
+}
+.nav-open {
+    margin-top: 14px;
+    margin-right: 12px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.nav-open span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  background: #cdcdcd;
+  border-radius: 3px;
+}
+.logged-user {
+    font-size: 18px;
+    color: burlywood;
+    padding-right: 2px;
+    position: absolute;
+    right: 0;
+}
+.logged-user .username {
+    text-transform: capitalize;
+}
+.logged-user img {
+    border-radius: 50%;
+    background-color: #d3d3d3;
+}
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #d3d3d3; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: -5px;
+    right: 15px;
+    font-size: 30px;
+    color: #7e3d3c;
+    cursor: pointer;
+}
+.nav-wrapper {
+    background-color: #d3d3d3;
+}
+.nav-logo {
+    background-image: url('/assets/images/cms-large.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 130px;
     height: 50px;
 }
