@@ -1,8 +1,10 @@
 <header>
     <div class="header-wrapper">
         <div class="d-flex">
-            <div *ngIf="user?.username" class="nav-open" (click)="openNav()">
-                <span></span><span></span><span></span>
+            <div id="menu" *ngIf="user?.username" (click)="toggleNav()">
+                <a href="javascript:void(0);" class="menu">
+                    <span></span>
+                </a>
             </div>
             <div class="header-logo"></div>
             <div *ngIf="user?.username" class="logged-user">
@@ -15,17 +17,13 @@
             </div>
         </div>
     </div>
-    <div *ngIf="user?.username" class="nav-wrapper">
-        <nav id="mySidenav" class="sidenav">
-            <div>
-                <div class="nav-logo"></div>
-                <span class="closebtn" (click)="closeNav()">
-                    x
-                </span>
-            </div>
-            <a class="nav-link" [routerLink]="">Company</a>
-            <a class="nav-link" [routerLink]="">Employee</a>
-            <a class="nav-link" [routerLink]="" (click)="onLogout()">Logout</a>
+    <div *ngIf="user?.username">
+        <nav id="sidenav" class="sidenav">
+            <ul>
+                <li><a [routerLink]="">Company</a></li>
+                <li><a [routerLink]="">Employee</a></li>
+                <li><a [routerLink]="" (click)="onLogout()">Logout</a></li>
+            </ul>
         </nav>
     </div>
 </header>

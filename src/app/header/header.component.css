@@ -12,21 +12,78 @@
     background-size: 100% auto;
     width: 158px;
     height: 50px;
+    margin-left: 57px;
 }
-.nav-open {
-    margin-top: 14px;
-    margin-right: 12px;
-    margin-left: 5px;
-    cursor: pointer;
+
+/* Header - Menu Icon */
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
 }
-.nav-open span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  background: #cdcdcd;
-  border-radius: 3px;
+#menu a.menu {
+    float: left;
+    padding: 16px;
+    position: relative;
+    width: 53px;
+    height: 52px;
 }
+#menu a.menu span {
+    display: block;
+    position: absolute;
+    background: #cdcdcd;
+    border-radius: 3px;
+    top: 25px;
+    left: 13px;
+    right: 13px;
+    height: 2px;
+    transition: 1s;
+}
+#menu a.menu span:before {
+    top: -8px;
+    content: "";
+    position: absolute;
+    background: #cdcdcd;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
+#menu a.menu span:after {
+    bottom: -8px;
+    content: "";
+    position: absolute;
+    background: #cdcdcd;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
+#menu a.menu-active span:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+#menu a.menu-active span {
+    background: 0;
+}
+#menu a.menu-active span:after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Header - Logo */
+.nav-logo {
+    background-image: url('/assets/images/cms-large.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 155px;
+    height: 50px;
+    margin-left: 20%;
+    margin-top: 1px;
+}
+
+/* Header - User image and name */
 .logged-user {
     font-size: 18px;
     color: burlywood;
@@ -41,46 +98,53 @@
     border-radius: 50%;
     background-color: #d3d3d3;
 }
+
+/* Menu - Expanded view */
 .sidenav {
-    height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    top: 51px; /* Stay at the top */
     left: 0;
+    bottom: 30px;
     background-color: #d3d3d3; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    opacity: 0.9;
 }
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+.sidenav ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.sidenav li a {
     display: block;
-    transition: 0.3s;
-}
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: -5px;
-    right: 15px;
-    font-size: 30px;
+    padding: 20px; 
+    border-left: 5px solid; 
+    position: relative; 
+    z-index: 2;
+    text-decoration: none;
+    font-size: 20px;
     color: #7e3d3c;
-    cursor: pointer;
+    transition: 1s;
+    width: 100%;
 }
-.nav-wrapper {
-    background-color: #d3d3d3;
+.sidenav li a:hover {
+    background-color: #7e3d3c;
+    width: 100%;
+    color: #ffffff;
 }
-.nav-logo {
-    background-image: url('/assets/images/cms-large.png');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    width: 130px;
-    height: 50px;
+.sidenav li a:after { 
+    content: "";
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0px;
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    z-index: -1;
+}  
+.sidenav li a:hover:after{ 
+    width: 100%;
+    background: #7e3d3c;
 }

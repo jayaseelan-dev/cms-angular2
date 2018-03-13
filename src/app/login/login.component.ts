@@ -22,6 +22,12 @@ export class LoginComponent {
                 private commonService: CommonService) {
     }
 
+    ngOnInit() {
+        if (this.commonService.isAuthenticated()) {
+            this.router.navigateByUrl('/home');
+        }
+    }
+
     onLogin(user) {
         this.loginService.doAuthenticateUser(this.user)
             .subscribe((users) => {

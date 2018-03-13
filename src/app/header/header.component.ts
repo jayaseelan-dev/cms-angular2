@@ -37,12 +37,16 @@ export class AppHeader {
     }
 
     /* Set the width of the side navigation to 250px */
-    openNav() {
-        document.getElementById("mySidenav").style.width = '250px';
-    }
+    toggleNav() {
+        var menu = document.querySelector('.menu');
+        var sidenav = document.getElementById('sidenav');
 
-    /* Set the width of the side navigation to 0 */
-    closeNav() {
-        document.getElementById("mySidenav").style.width = '0';
+        if (sidenav.style.width) {
+            menu.classList.remove('menu-active');
+            sidenav.style.width = '';
+            return;
+        }
+        menu.classList.add('menu-active');
+        sidenav.style.width = '220px';
     }
 }
