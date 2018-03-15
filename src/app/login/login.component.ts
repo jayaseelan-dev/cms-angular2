@@ -23,6 +23,8 @@ export class LoginComponent {
     }
 
     ngOnInit() {
+        // Check if the user is already authenticated
+        // After logged in, if the user clicks on browser back button, redirect to home page.
         if (this.commonService.isAuthenticated()) {
             this.router.navigateByUrl('/home');
         }
@@ -40,7 +42,7 @@ export class LoginComponent {
                     }
                 });
                 if (!this.isInvalidCredentials) {
-                    this.router.navigateByUrl('/home');
+                    this.router.navigateByUrl('/home/company');
                 }
             });
     }

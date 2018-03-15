@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
@@ -7,7 +7,17 @@ import { CompanyComponent } from './company.component';
 const companyRoutes: Routes = [
     {
         path: 'company',
-        component: CompanyComponent
+        component: CompanyComponent,
+        // children: [
+        //     {
+        //         path: 'list',
+        //         component: CompanyListComponent
+        //     },
+        //     {
+        //         path: 'details/:id',
+        //         component: CompanyDetailComponent
+        //     }
+        // ]
     }
 ];
 
@@ -16,10 +26,12 @@ const companyRoutes: Routes = [
         CompanyComponent
     ],
     imports: [
-        BrowserModule,
+        CommonModule,
         RouterModule.forChild(companyRoutes)
     ],
-    exports: []
+    exports: [
+        RouterModule
+    ]
 })
 
 export class CompanyRoutingModule { }

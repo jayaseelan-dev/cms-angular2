@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
-import { CompanyService } from "./company.service";
+import { CompanyService } from './company.service';
 
 @Component({
     selector: 'company',

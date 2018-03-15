@@ -1,27 +1,29 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home.component';
-import { HomeModule } from "app/home/home.module";
+import { CompanyComponent } from './company/company.component';
 
-import { AuthGuard } from "../common/auth-guard.service";
+import { AuthGuard } from '../common/auth-guard.service';
+import { CompanyModule } from './company/company.module';
 
 const homeRoutes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: HomeComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        redirectTo: 'company'
     }
 ];
 
 @NgModule({
-    declarations: [
-        HomeComponent
-    ],
     imports: [
+        CompanyModule,
         RouterModule.forChild(homeRoutes)
     ],
-    exports: []
+    exports: [
+        RouterModule
+    ]
 })
 
 export class HomeRoutingModule { }

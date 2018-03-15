@@ -12,16 +12,10 @@
     background-size: 100% auto;
     width: 158px;
     height: 50px;
-    margin-left: 57px;
+    margin-left: 10px;
 }
 
 /* Header - Menu Icon */
-#menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1040;
-}
 #menu a.menu {
     float: left;
     padding: 16px;
@@ -102,7 +96,7 @@
 /* Menu - Expanded view */
 .sidenav {
     width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
+    position: absolute; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 51px; /* Stay at the top */
     left: 0;
@@ -110,7 +104,7 @@
     background-color: #d3d3d3; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    opacity: 0.9;
+    height: 100%;
 }
 .sidenav ul {
     list-style: none;
@@ -129,7 +123,7 @@
     transition: 1s;
     width: 100%;
 }
-.sidenav li a:hover {
+.sidenav li a:hover, .sidenav li a.active {
     background-color: #7e3d3c;
     width: 100%;
     color: #ffffff;

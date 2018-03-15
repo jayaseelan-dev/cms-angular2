@@ -28,7 +28,6 @@ export class AppHeader {
 
     onLogout() {
         this.commonService.removeUser();
-        this.router.navigateByUrl('/login');
     }
 
     ngOnDestroy() {

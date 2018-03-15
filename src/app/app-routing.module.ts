@@ -4,14 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found.component';
 
 const appRoutes: Routes = [
-    {
-        path: '',
-        redirectTo: 'login',
-        pathMatch: 'full'
-    }, {
-        path: '**',
-        component: PageNotFoundComponent
-    }
+    { path: '', redirectTo: 'login', pathMatch: 'full' }, 
+    { path: 'home', loadChildren: './home/home.module#HomeModule' },
+    { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
