@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 import { CommonService } from '../common/common.service';
-import { Subscription } from "rxjs/Subscription";
 
 @Component({
     selector: 'app-header',
@@ -10,7 +10,7 @@ import { Subscription } from "rxjs/Subscription";
     styleUrls: ['./header.component.css']
 })
 
-export class AppHeader { 
+export class AppHeader {
     public user;
     public subscription: Subscription;
 
@@ -30,11 +30,6 @@ export class AppHeader {
         this.commonService.removeUser();
     }
 
-    ngOnDestroy() {
-        // prevent memory leak when component destroyed
-        this.subscription.unsubscribe();
-    }
-
     /* Set the width of the side navigation to 250px */
     toggleNav() {
         var menu = document.querySelector('.menu');
@@ -47,5 +42,10 @@ export class AppHeader {
         }
         menu.classList.add('menu-active');
         sidenav.style.width = '220px';
+    }
+
+    ngOnDestroy() {
+        // prevent memory leak when component destroyed
+        this.subscription.unsubscribe();
     }
 }

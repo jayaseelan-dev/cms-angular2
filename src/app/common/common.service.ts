@@ -4,7 +4,7 @@ export class CommonService {
     private _user = null;
     private _userSource = new Subject<object>();
     public userUpdated$ = this._userSource.asObservable();
-
+    
     get user(): object {
         return JSON.parse(localStorage.getItem('currentUser'));
     }
@@ -15,7 +15,7 @@ export class CommonService {
     }
     
     updateUser(user: object) {
-        this._userSource.next(user);
+        this._userSource.next(user); // Emitting the value to the subscribers
     }
 
     removeUser() {

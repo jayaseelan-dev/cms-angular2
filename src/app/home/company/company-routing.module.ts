@@ -7,7 +7,7 @@ import { CompanyComponent } from './company.component';
 const companyRoutes: Routes = [
     {
         path: 'company',
-        component: CompanyComponent,
+        component: CompanyComponent
         // children: [
         //     {
         //         path: 'list',
